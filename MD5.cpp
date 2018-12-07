@@ -68,8 +68,10 @@ void padding(byte* input, int length) {
         if (flag == 16) {
             groups.push_back(group);
             flag = 0;
+            group.clear();
         }
     }
+    
 }
 
 //压缩函数
@@ -137,8 +139,8 @@ void getBytes() {
 }
 
 int main() {
-    string test;
-    std::cin >> test;
+    string test;// = "In cryptography, a keyed-hash message authentication code(HMAC) is a specific type of MAC involving a cryptographic hashfunction and a secret cryptographic key.It may be used to simultaneously verify both the data integrity andthe authentication of a message, as with any MAC.Any cryptographic hash function, such as MD5 or SHA-1, may beused in the calculation of an HMAC; the resulting MAC algorithm istermed HMAC-MD5 or HMAC-SHA1 accordingly.The cryptographic strength of the HMAC depends upon thecryptographic strength of the underlying hash function, the size ofits hash output, and on the size and quality of the key";
+    getline(std::cin, test);
     padding((byte*)test.c_str(), test.length());
     HMD5();
     getBytes();
